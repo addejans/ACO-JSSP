@@ -1,7 +1,8 @@
 # ACO-JSSP
 ## Job Shop Scheduling Problem via Ant Colony Optimization
 
-#### Introduction 
+#### Introduction to Ant Colony Optimization
+
 Combinatorial optimization problems naturally arise in the industrial world all the time. Often, having sufficient solutions to these problems can save companies millions of dollars. We
 know of many examples in which optimization problems arise; for example: bus scheduling,
 telecommunication network design, travelling, and vehicle routing problems. Perhaps the
@@ -19,4 +20,4 @@ expected, to give approximately the optimal solution. The great thing about usin
 Ant colony optimization (ACO) algorithms are some of the most recent class of algorithms
 designed to approximate combinatorial optimization problems. The algorithm behaves similar to real ants and their biological abilities to find the nearest food source and bring it back
 to their nest. The main source of communication between ants is the depositing of chemically produced pheromone onto their paths. It is with this key idea that Marco Dorigo and
-colleagues were inspired to create this new class of algorithms
+colleagues were inspired to create this new class of algorithms.
