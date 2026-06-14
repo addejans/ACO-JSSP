@@ -2,7 +2,7 @@
 
 Job Shop Scheduling Problem via Ant Colony Optimization.
 
-This repository began as a 2017 research/prototype implementation of Ant Colony Optimization (ACO) for a small Job Shop Scheduling Problem (JSSP). It now includes a cleaned Python 3 solver, tests, and a dependency-free browser visualizer for generated job-shop instances.
+This repository began as a 2017 research/prototype implementation of Ant Colony Optimization (ACO) for a small Job Shop Scheduling Problem (JSSP). It now includes a cleaned Python 3 solver, tests, a HiGHS MILP baseline, and a dependency-free browser visualizer for generated job-shop instances.
 
 ## Live demo
 
@@ -10,7 +10,7 @@ Try the browser visualizer here:
 
 https://addejans.github.io/ACO-JSSP/
 
-The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.
+The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, inspect the resulting Gantt chart, and compare the heuristic result against a capped exact browser search for small instances.
 
 Updated LaTeX report: [ACO_JSSP_Updated_Report.pdf](paper/ACO_JSSP_Updated_Report.pdf)
 
@@ -29,7 +29,31 @@ python -m src.aco_jssp --jobs 8 --machines 5 --ants 60 --iterations 150 --seed 1
 python -m src.aco_jssp --jobs 8 --machines 5 --output docs/sample-schedule.json
 ```
 
-The cleaned implementation is dependency-free and uses only the Python standard library.
+The cleaned ACO implementation is dependency-free and uses only the Python standard library.
+
+## ACO vs HiGHS MILP comparison
+
+The exact MILP baseline uses SciPy's HiGHS backend. Install the optional dependency first:
+
+```bash
+python -m pip install -r requirements-optional.txt
+```
+
+Then compare ACO against the MILP baseline:
+
+```bash
+python -m src.compare_solvers --jobs 4 --machines 3 --ants 40 --iterations 120 --milp-time-limit 10
+python -m src.compare_solvers --demo --milp-time-limit 10 --output results/demo-comparison.json
+```
+
+The comparison output reports:
+
+- ACO makespan and runtime;
+- HiGHS MILP objective, runtime, solver status, and MIP gap;
+- ACO optimality gap when HiGHS proves an optimal solution;
+- both schedules in JSON-friendly form.
+
+The browser UI also includes a small-instance exact comparison panel. The browser comparison is not SciPy/HiGHS because this is a static GitHub Pages site, but it gives a useful interactive gap check for small instances.
 
 ## Scalable generated instances
 
@@ -59,7 +83,8 @@ The visualizer lives in [`docs/index.html`](docs/index.html). It runs entirely i
 - ant count;
 - iteration count;
 - random seed;
-- local-search budget.
+- local-search budget;
+- capped exact-comparison time limit.
 
 The GitHub Pages workflow publishes the `docs/` directory:
 
@@ -81,14 +106,18 @@ The modern solver is still intentionally compact, but it is no longer a direct m
 - iteration-best pheromone reinforcement;
 - global-best elite reinforcement;
 - pair-swap local search on constructed job-order sequences;
-- tests for precedence feasibility, machine non-overlap, determinism, and generated larger instances.
+- tests for precedence feasibility, machine non-overlap, determinism, generated larger instances, and the optional HiGHS MILP baseline.
 
 ## Repository structure
 
 ```text
 src/aco_jssp.py          # Modern Python 3 ACO solver
-tests/test_aco_jssp.py   # Unit tests for schedule validity and determinism
+src/milp_jssp.py         # Exact MILP baseline using SciPy/HiGHS
+src/compare_solvers.py   # ACO vs HiGHS comparison runner
+tests/test_aco_jssp.py   # Unit tests for schedule validity, determinism, and MILP smoke tests
 docs/index.html          # Static browser visualizer / Gantt UI
+paper/                   # LaTeX report source and compiled PDF
+legacy/                  # Original 2017 prototype scripts
 ERRORS_AND_FIXES.md      # Review notes and corrected issues
 ```
 
