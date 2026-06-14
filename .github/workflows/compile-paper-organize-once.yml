@@ -1,0 +1,90 @@
+name: Compile Paper And Organize Once
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compile-and-organize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-pictures
+      - name: Organize repository and compile report
+        run: |
+          set -euo pipefail
+          mkdir -p legacy paper/archive
+
+          if [ -f "ACO_JSSP_Novel_2_4J3M_04-15-2017_1947_bestWork1f.py" ]; then
+            git mv "ACO_JSSP_Novel_2_4J3M_04-15-2017_1947_bestWork1f.py" legacy/
+          fi
+          if [ -f "ACO_JSSP_Novel_2_8J4M_04-16-2017_1800_bestWork1f - play.py" ]; then
+            git mv "ACO_JSSP_Novel_2_8J4M_04-16-2017_1800_bestWork1f - play.py" legacy/
+          fi
+
+          if [ -f "papers/ACO_JSSP_Updated_Technical_Paper.pdf" ]; then
+            git mv "papers/ACO_JSSP_Updated_Technical_Paper.pdf" "paper/archive/ACO_JSSP_ReportLab_Draft.pdf"
+          fi
+          if [ -d "papers" ]; then
+            rmdir papers || true
+          fi
+
+          cat > legacy/README.md <<'EOF'
+          # Legacy prototype scripts
+
+          This folder contains the original 2017 ACO-JSSP prototype scripts. They are preserved for historical reference.
+
+          New work should start from `src/aco_jssp.py`, which contains the modern Python 3 implementation, generated instances, local search, tests, and CLI support.
+
+          Known legacy issues include Python 2 syntax, deprecated Plotly APIs, hard-coded Plotly credentials, heavy global state, and no automated tests.
+          EOF
+
+          cat > paper/README.md <<'EOF'
+          # Paper
+
+          This folder contains the updated LaTeX-style technical report for the ACO-JSSP project.
+
+          - `ACO_JSSP_Updated_Report.tex` - LaTeX source
+          - `ACO_JSSP_Updated_Report.pdf` - compiled PDF
+          - `archive/ACO_JSSP_ReportLab_Draft.pdf` - earlier generated draft, kept only for reference if present
+          EOF
+
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/ACO_JSSP_Updated_Report.tex
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/ACO_JSSP_Updated_Report.tex
+          rm -f paper/*.aux paper/*.log paper/*.out paper/*.toc
+
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('README.md')
+          text = p.read_text(encoding='utf-8')
+          old = 'Updated technical paper: [ACO_JSSP_Updated_Technical_Paper.pdf](papers/ACO_JSSP_Updated_Technical_Paper.pdf)'
+          new = 'Updated LaTeX report: [ACO_JSSP_Updated_Report.pdf](paper/ACO_JSSP_Updated_Report.pdf)'
+          if old in text:
+              text = text.replace(old, new)
+          elif new not in text:
+              marker = 'The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.\n'
+              text = text.replace(marker, marker + '\n' + new + '\n', 1)
+          text = text.replace('The original scripts are still present as historical artifacts. New work should start from `src/aco_jssp.py`.', 'The original scripts have been moved to `legacy/` as historical artifacts. New work should start from `src/aco_jssp.py`.')
+          p.write_text(text, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/compile-paper-organize-once.yml
+      - name: Commit compiled report and organization cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Add LaTeX report and organize repository"
+          git push
