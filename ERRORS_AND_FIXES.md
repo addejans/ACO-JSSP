@@ -22,20 +22,28 @@ This repository started as a 2017 research/prototype implementation. The PR mode
 6. **Pheromone accumulator reset and probability edge cases.**
    The old code has unclear accumulator reset semantics and can fall back to arbitrary choices when transition probabilities are empty or numerically unstable. The modern implementation guards weighted choice and evaporates/deposits pheromone deterministically.
 
-7. **No automated tests.**
-   There were no tests for job precedence, machine capacity, or deterministic behavior. The PR adds unit tests for all three.
+7. **Fixed-size demo limitation.**
+   The first visualizer only covered the original 4-job, 3-machine instance. The UI now supports generated instances where the user can choose job and machine counts from bounded ranges.
 
-8. **No easy visual inspection.**
+8. **Weak improvement loop.**
+   The first cleaned ACO version constructed schedules but did not intensify much after construction. The solver now adds remaining-work-aware move scoring, a mixed exploration/exploitation rule, global-best elite reinforcement, and pair-swap local search.
+
+9. **No automated tests.**
+   There were no tests for job precedence, machine capacity, or deterministic behavior. The PR adds tests for the original demo and larger generated instances.
+
+10. **No easy visual inspection.**
    The original Gantt chart depended on online Plotly credentials. The PR adds a dependency-free browser Gantt chart under `docs/`.
 
-## Fixes added in this PR
+## Fixes added
 
-- Added `src/aco_jssp.py`, a Python 3, dependency-free ACO/JSSP demo solver.
+- Added `src/aco_jssp.py`, a Python 3, dependency-free ACO/JSSP solver.
+- Added random instance generation with selectable jobs, machines, and duration ranges.
+- Added local search, exploitation probability, elite reinforcement, and remaining-work heuristic scoring.
 - Added unit tests in `tests/test_aco_jssp.py`.
-- Added a static browser visualizer in `docs/index.html`.
+- Added a static browser visualizer in `docs/index.html` with job/machine controls.
 - Added GitHub Actions CI for tests.
 - Added a GitHub Pages deployment workflow for the visualizer.
-- Updated the README with usage, deployment, and maintenance notes.
+- Updated the README with usage, deployment, scaling, and maintenance notes.
 
 ## Not changed intentionally
 
