@@ -2,7 +2,7 @@
 
 Job Shop Scheduling Problem via Ant Colony Optimization.
 
-This repository began as a 2017 research/prototype implementation of Ant Colony Optimization (ACO) for a small Job Shop Scheduling Problem (JSSP). It now includes a cleaned Python 3 solver, tests, and a dependency-free browser visualizer that can run both the original demo and generated instances.
+This repository began as a 2017 research/prototype implementation of Ant Colony Optimization (ACO) for a small Job Shop Scheduling Problem (JSSP). It now includes a cleaned Python 3 solver, tests, and a dependency-free browser visualizer for generated job-shop instances.
 
 ## Live demo
 
@@ -10,7 +10,7 @@ Try the browser visualizer here:
 
 https://addejans.github.io/ACO-JSSP/
 
-The demo runs entirely in the browser and lets you generate job-shop instances, tune ACO parameters, and inspect the resulting Gantt chart.
+The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.
 
 ## What this solves
 
@@ -49,10 +49,15 @@ Important CLI options:
 
 ## Browser visualizer
 
-The visualizer lives in [`docs/index.html`](docs/index.html). It runs entirely in the browser and renders a Gantt chart for either:
+The visualizer lives in [`docs/index.html`](docs/index.html). It runs entirely in the browser and renders a Gantt chart from the controls in the sidebar:
 
-- the original 4-job, 3-machine demo instance, or
-- a generated instance with a user-selected number of jobs and machines.
+- number of jobs;
+- number of machines;
+- operation duration range;
+- ant count;
+- iteration count;
+- random seed;
+- local-search budget.
 
 The GitHub Pages workflow publishes the `docs/` directory:
 
@@ -87,9 +92,9 @@ ERRORS_AND_FIXES.md      # Review notes and corrected issues
 
 The original scripts are still present as historical artifacts. New work should start from `src/aco_jssp.py`.
 
-## Demo instance
+## Original demo instance
 
-The included demo mirrors the original 4-job, 3-machine setup:
+The CLI can still reproduce the original 4-job, 3-machine setup using `--demo`:
 
 | Job | Operation 1 | Operation 2 | Operation 3 |
 | --- | --- | --- | --- |
