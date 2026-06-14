@@ -12,7 +12,7 @@ https://addejans.github.io/ACO-JSSP/
 
 The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.
 
-Updated technical paper: [ACO_JSSP_Updated_Technical_Paper.pdf](papers/ACO_JSSP_Updated_Technical_Paper.pdf)
+Updated LaTeX report: [ACO_JSSP_Updated_Report.pdf](paper/ACO_JSSP_Updated_Report.pdf)
 
 ## What this solves
 
@@ -92,7 +92,7 @@ docs/index.html          # Static browser visualizer / Gantt UI
 ERRORS_AND_FIXES.md      # Review notes and corrected issues
 ```
 
-The original scripts are still present as historical artifacts. New work should start from `src/aco_jssp.py`.
+The original scripts have been moved to `legacy/` as historical artifacts. New work should start from `src/aco_jssp.py`.
 
 ## Original demo instance
 
