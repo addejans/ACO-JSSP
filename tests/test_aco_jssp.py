@@ -1,6 +1,10 @@
+import importlib.util
 import unittest
 
 from src.aco_jssp import demo_problem, random_problem, schedule_from_job_order, solve_aco
+
+
+SCIPY_AVAILABLE = importlib.util.find_spec("scipy") is not None
 
 
 def assert_valid_schedule(testcase, problem, makespan, schedule):
@@ -58,6 +62,16 @@ class AcoJsspTests(unittest.TestCase):
         makespan, schedule, order = solve_aco(problem, ants=10, iterations=12, seed=4, local_search_steps=20)
         self.assertEqual(len(order), problem.num_operations)
         assert_valid_schedule(self, problem, makespan, schedule)
+
+    @unittest.skipUnless(SCIPY_AVAILABLE, "SciPy is optional; skipping HiGHS MILP test")
+    def test_highs_milp_solves_small_generated_problem(self):
+        from src.milp_jssp import solve_milp_highs
+
+        problem = random_problem(num_jobs=3, num_machines=3, seed=9, min_duration=1, max_duration=8)
+        result = solve_milp_highs(problem, time_limit=5.0)
+        self.assertIsNotNone(result.objective)
+        self.assertEqual(len(result.schedule), problem.num_operations)
+        assert_valid_schedule(self, problem, int(round(result.objective)), result.schedule)
 
 
 if __name__ == "__main__":
