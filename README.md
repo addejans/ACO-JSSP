@@ -12,6 +12,8 @@ https://addejans.github.io/ACO-JSSP/
 
 The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.
 
+Updated technical paper: [ACO_JSSP_Updated_Technical_Paper.pdf](papers/ACO_JSSP_Updated_Technical_Paper.pdf)
+
 ## What this solves
 
 In a job shop scheduling problem, each job has a fixed sequence of operations. Each operation must run on a specific machine for a given duration. The goal is to sequence operations on machines while respecting job precedence and machine capacity, usually minimizing the final completion time, or **makespan**.

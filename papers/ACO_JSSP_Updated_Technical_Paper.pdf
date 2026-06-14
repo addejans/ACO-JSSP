@@ -1,0 +1,1205 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 6 0 R /F4 7 0 R /F5 8 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/BaseFont /Times-Roman /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F5 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/Contents 17 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/Contents 18 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/Contents 19 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+12 0 obj
+<<
+/PageMode /UseNone /Pages 14 0 R /Type /Catalog
+>>
+endobj
+13 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20260614063823+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260614063823+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+14 0 obj
+<<
+/Count 5 /Kids [ 4 0 R 5 0 R 9 0 R 10 0 R 11 0 R ] /Type /Pages
+>>
+endobj
+15 0 obj
+<<
+/Length 1979
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7.5 Tf 9 TL ET
+.392157 .454902 .545098 rg
+BT 1 0 0 1 51.84 27.36 Tm (ACO-JSSP updated technical paper) Tj T* ET
+BT 1 0 0 1 536.3925 27.36 Tm (Page 1) Tj T* ET
+Q
+q
+1 0 0 1 57.84 701.76 cm
+Q
+q
+1 0 0 1 57.84 645.76 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 32 Tm /F2 24 Tf 28 TL 30.816 0 Td (Ant Colony Optimization for Job Shop) Tj T* 152.664 0 Td (Scheduling) Tj T* -183.48 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 624.76 cm
+q
+.278431 .333333 .411765 rg
+BT 1 0 0 1 0 4 Tm /F1 11 Tf 15 TL 49.7805 0 Td (Updated technical paper for the modern ACO-JSSP solver and browser visualizer) Tj T* -49.7805 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 580.76 cm
+q
+.278431 .333333 .411765 rg
+BT 1 0 0 1 0 19 Tm /F2 11 Tf 15 TL 80.014 0 Td (Adam DeJans Jr. | June 2026 | github.com/addejans/ACO-JSSP |) Tj T* 88.3795 0 Td (addejans.github.io/ACO-JSSP/) Tj T* -168.3935 0 Td ET
+Q
+Q
+q
+1 0 0 1 144.696 565.76 cm
+q
+1 w
+1 J
+.219608 .741176 .972549 RG
+n 0 0 m 322.608 0 l S
+Q
+Q
+q
+1 0 0 1 57.84 481.76 cm
+q
+BT 1 0 0 1 0 56.5 Tm 13.2 TL /F2 9.5 Tf .121569 .160784 .215686 rg (Abstract.) Tj /F1 9.5 Tf ( This paper documents a modernized Ant Colony Optimization implementation for the Job Shop Scheduling) Tj T* (Problem. The repository started as a 2017 research prototype and now includes a Python 3 solver, deterministic tests,) Tj T* (generated problem instances, a browser Gantt visualizer, and GitHub Pages deployment. The goal is not to prove) Tj T* -0.037857 Tw (global optimality. The goal is to provide a practical, inspectable demonstration of probabilistic construction, pheromone) Tj T* 0 Tw (learning, exploitation, local search, and schedule decoding for a constrained sequencing problem.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 464.96 cm
+q
+BT 1 0 0 1 0 2.7 Tm 10.8 TL /F2 8.1 Tf .278431 .333333 .411765 rg (Keywords:) Tj /F1 8.1 Tf ( Ant Colony Optimization, job shop scheduling, metaheuristics, Gantt chart, operations research, local search, GitHub Pages.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 4035
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7.5 Tf 9 TL ET
+.392157 .454902 .545098 rg
+BT 1 0 0 1 51.84 27.36 Tm (ACO-JSSP updated technical paper) Tj T* ET
+BT 1 0 0 1 536.3925 27.36 Tm (Page 2) Tj T* ET
+Q
+q
+1 0 0 1 57.84 716.16 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (1. Motivation and problem context) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 657.36 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 43.3 Tm /F1 9.5 Tf 13.2 TL (The Job Shop Scheduling Problem is a compact way to explain one of the hardest practical realities in operations:) Tj T* (every job follows a route, every machine can process only one operation at a time, and every local sequencing choice) Tj T* (can create downstream congestion. The objective in this repository is makespan minimization: finish the last operation) Tj T* (as early as possible while respecting job-precedence and machine-capacity constraints.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 598.56 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 43.3 Tm /F1 9.5 Tf 13.2 TL (Exact mathematical optimization formulations exist, but the search space grows quickly as jobs and machines) Tj T* (increase. This makes JSSP a useful setting for metaheuristics. ACO converts scheduling into repeated constructive) Tj T* (search: ants build sequences, good sequences receive more pheromone, and future ants are biased toward choices) Tj T* (that historically produced shorter schedules.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 567.56 cm
+q
+.490196 .827451 .988235 RG
+.5 w
+.878431 .94902 .996078 rg
+n -8 -8 512.32 41 re B*
+Q
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 16 Tm /F2 9 Tf 12.5 TL (Design goal: make the algorithm understandable, runnable, and visual before optimizing for industrial-scale) Tj T* (performance.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 541.56 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (2. Job shop scheduling model) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 509.16 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 16.9 Tm /F1 9.5 Tf 13.2 TL (A job shop instance is represented as a set of jobs. Each job is a sequence of operations. Each operation has a) Tj T* (required machine and processing duration. A feasible schedule must satisfy job precedence and machine capacity.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 378.36 cm
+q
+.058824 .090196 .164706 rg
+n 0 124.8 464.4 -20.8 re f*
+1 1 1 rg
+BT /F2 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 111.4 Tm (Concept) Tj T* ET
+BT 1 0 0 1 102.2 111.4 Tm (Representation) Tj T* ET
+BT 1 0 0 1 228.2 111.4 Tm (Purpose) Tj T* ET
+0 0 0 rg
+BT /F1 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 90.6 Tm (Job) Tj T* ET
+BT 1 0 0 1 102.2 90.6 Tm (Index j in jobs) Tj T* ET
+BT 1 0 0 1 228.2 90.6 Tm (Route processed in order) Tj T* ET
+BT 1 0 0 1 5 69.8 Tm (Operation) Tj T* ET
+BT 1 0 0 1 102.2 69.8 Tm (\(machine, duration\)) Tj T* ET
+BT 1 0 0 1 228.2 69.8 Tm (One processing step) Tj T* ET
+BT 1 0 0 1 5 49 Tm (Job order) Tj T* ET
+BT 1 0 0 1 102.2 49 Tm (Sequence of job IDs) Tj T* ET
+BT 1 0 0 1 228.2 49 Tm (Constructive representation built by ants) Tj T* ET
+BT 1 0 0 1 5 28.2 Tm (Schedule) Tj T* ET
+BT 1 0 0 1 102.2 28.2 Tm (Start/end per operation) Tj T* ET
+BT 1 0 0 1 228.2 28.2 Tm (Decoded feasible solution) Tj T* ET
+BT 1 0 0 1 5 7.4 Tm (Objective) Tj T* ET
+BT 1 0 0 1 102.2 7.4 Tm (Makespan) Tj T* ET
+BT 1 0 0 1 228.2 7.4 Tm (Completion time of the last operation) Tj T* ET
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.35 w
+n 0 124.8 m 464.4 124.8 l S
+n 0 0 m 464.4 0 l S
+n 0 0 m 0 124.8 l S
+n 464.4 0 m 464.4 124.8 l S
+n 0 104 m 464.4 104 l S
+n 0 83.2 m 464.4 83.2 l S
+n 0 62.4 m 464.4 62.4 l S
+n 0 41.6 m 464.4 41.6 l S
+n 0 20.8 m 464.4 20.8 l S
+n 97.2 0 m 97.2 124.8 l S
+n 223.2 0 m 223.2 124.8 l S
+Q
+Q
+Q
+q
+1 0 0 1 57.84 332.76 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 30.1 Tm /F1 9.5 Tf 13.2 TL (The modern solver uses a job-order encoding. Each time a job ID appears, the decoder schedules the next) Tj T* (unscheduled operation for that job at the earliest feasible time. This guarantees job precedence by construction and) Tj T* (lets the decoder enforce machine feasibility.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+17 0 obj
+<<
+/Length 9889
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7.5 Tf 9 TL ET
+.392157 .454902 .545098 rg
+BT 1 0 0 1 51.84 27.36 Tm (ACO-JSSP updated technical paper) Tj T* ET
+BT 1 0 0 1 536.3925 27.36 Tm (Page 3) Tj T* ET
+Q
+q
+1 0 0 1 57.84 716.16 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (3. Ant Colony Optimization technique) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 683.76 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 16.9 Tm /F1 9.5 Tf 13.2 TL (ACO is a population-based constructive metaheuristic. Each ant incrementally builds a complete solution. The choice) Tj T* (of the next job is random but biased by pheromone and a heuristic estimate of desirability.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 547.76 cm
+q
+1 0 0 1 0 0 cm
+0 0 0 RG
+1 w
+0 J
+0 j
+[] 0 d
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 0 cm
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+16 72 m
+100 72 l
+104.4224 72 108 75.5776 108 80 c
+108 104 l
+108 108.4224 104.4224 112 100 112 c
+16 112 l
+11.5776 112 8 108.4224 8 104 c
+8 80 l
+8 75.5776 11.5776 72 16 72 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 38.4925 95 Tm (Generate) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 44.035 82 Tm (instance) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+134 72 m
+218 72 l
+222.4224 72 226 75.5776 226 80 c
+226 104 l
+226 108.4224 222.4224 112 218 112 c
+134 112 l
+129.5776 112 126 108.4224 126 104 c
+126 80 l
+126 75.5776 129.5776 72 134 72 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 154.751 95 Tm (Construct) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 159.1175 82 Tm (ant orders) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+252 72 m
+336 72 l
+340.4224 72 344 75.5776 344 80 c
+344 104 l
+344 108.4224 340.4224 112 336 112 c
+252 112 l
+247.5776 112 244 108.4224 244 104 c
+244 80 l
+244 75.5776 247.5776 72 252 72 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 277.746 95 Tm (Decode) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 278.9925 82 Tm (schedule) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+370 72 m
+454 72 l
+458.4224 72 462 75.5776 462 80 c
+462 104 l
+462 108.4224 458.4224 112 454 112 c
+370 112 l
+365.5776 112 362 108.4224 362 104 c
+362 80 l
+362 75.5776 365.5776 72 370 72 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 393.4915 95 Tm (Evaluate) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 394.7013 82 Tm (makespan) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+134 14 m
+218 14 l
+222.4224 14 226 17.5776 226 22 c
+226 46 l
+226 50.4224 222.4224 54 218 54 c
+134 54 l
+129.5776 54 126 50.4224 126 46 c
+126 22 l
+126 17.5776 129.5776 14 134 14 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 164.246 37 Tm (Local) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 164.7463 24 Tm (search) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+252 14 m
+336 14 l
+340.4224 14 344 17.5776 344 22 c
+344 46 l
+344 50.4224 340.4224 54 336 54 c
+252 54 l
+247.5776 54 244 50.4224 244 46 c
+244 22 l
+244 17.5776 247.5776 14 252 14 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 278.7495 37 Tm (Update) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 275.0325 24 Tm (pheromone) Tj T* ET
+Q
+q
+.878431 .94902 .996078 rg
+.007843 .517647 .780392 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n
+370 14 m
+454 14 l
+458.4224 14 462 17.5776 462 22 c
+462 46 l
+462 50.4224 458.4224 54 454 54 c
+370 54 l
+365.5776 54 362 50.4224 362 46 c
+362 22 l
+362 17.5776 365.5776 14 370 14 c
+h
+B*
+Q
+q
+BT /F2 9 Tf 10.8 TL ET
+BT /F2 9 Tf 10.8 TL ET
+.058824 .090196 .164706 rg
+BT 1 0 0 1 396.4975 37 Tm (Render) Tj T* ET
+Q
+q
+BT /F1 7.5 Tf 9 TL ET
+BT /F1 7.5 Tf 9 TL ET
+.278431 .333333 .411765 rg
+BT 1 0 0 1 398.035 24 Tm (Gantt UI) Tj T* ET
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 108 92 m 126 92 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 126 92 m 121 95 l 121 89 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 226 92 m 244 92 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 244 92 m 239 95 l 239 89 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 344 92 m 362 92 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 362 92 m 357 95 l 357 89 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 412 72 m 412 54 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 412 54 m 407 57 l 407 51 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 362 34 m 344 34 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 344 34 m 349 37 l 349 31 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 244 34 m 226 34 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 226 34 m 231 37 l 231 31 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 176 54 m 176 72 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 176 72 m 171 75 l 171 69 l h
+B*
+Q
+q
+.392157 .454902 .545098 RG
+1.1 w
+0 J
+0 j
+[] 0 d
+n 344 34 m 362 34 l S
+Q
+q
+.392157 .454902 .545098 rg
+.392157 .454902 .545098 RG
+1 w
+0 J
+0 j
+[] 0 d
+n 362 34 m 357 37 l 357 31 l h
+B*
+Q
+Q
+Q
+Q
+q
+1 0 0 1 57.84 531.76 cm
+q
+.392157 .454902 .545098 rg
+BT 1 0 0 1 0 2 Tm /F4 8 Tf 10 TL 96.984 0 Td (Figure 1. Updated ACO-JSSP flow from generated instance to schedule visualization.) Tj T* -96.984 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 513.26 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Generate or load a JSSP instance.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 494.76 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Initialize pheromone values for transitions between job selections.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 476.26 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Let each ant construct a full job-order sequence.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 457.76 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Decode the job order into a feasible active schedule.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 439.26 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Improve the constructed solution with pair-swap local search.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 420.76 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Evaporate old pheromone and reinforce the iteration-best and global-best orders.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 402.26 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Return the best schedule found and render it as a Gantt chart.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 371.26 cm
+q
+.490196 .827451 .988235 RG
+.5 w
+.878431 .94902 .996078 rg
+n -8 -8 512.32 41 re B*
+Q
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 16 Tm /F2 9 Tf 12.5 TL (This is not a proof of optimality. It is a demonstration of improving stochastic search over a constrained scheduling) Tj T* (space.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 345.26 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (4. Modern implementation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 299.66 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 30.1 Tm /F1 9.5 Tf 13.2 TL (The updated Python solver is dependency-free and uses standard-library data structures. The original repository) Tj T* (scripts used Python 2 syntax and an old Plotly API. The modern implementation adds a clean object model,) Tj T* (deterministic random seeds, JSON output, tests, and CLI controls.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 148.06 cm
+q
+.058824 .090196 .164706 rg
+n 0 145.6 468 -20.8 re f*
+1 1 1 rg
+BT /F2 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 132.2 Tm (File) Tj T* ET
+BT 1 0 0 1 170.6 132.2 Tm (Role) Tj T* ET
+0 0 0 rg
+BT /F1 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 111.4 Tm (src/aco_jssp.py) Tj T* ET
+BT 1 0 0 1 170.6 111.4 Tm (Modern Python 3 ACO solver and CLI) Tj T* ET
+BT 1 0 0 1 5 90.6 Tm (tests/test_aco_jssp.py) Tj T* ET
+BT 1 0 0 1 170.6 90.6 Tm (Schedule validity and determinism tests) Tj T* ET
+BT 1 0 0 1 5 69.8 Tm (docs/index.html) Tj T* ET
+BT 1 0 0 1 170.6 69.8 Tm (Browser visualizer and Gantt chart UI) Tj T* ET
+BT 1 0 0 1 5 49 Tm (ERRORS_AND_FIXES.md) Tj T* ET
+BT 1 0 0 1 170.6 49 Tm (Review notes and corrected issues) Tj T* ET
+BT 1 0 0 1 5 28.2 Tm (.github/workflows/pages.yml) Tj T* ET
+BT 1 0 0 1 170.6 28.2 Tm (GitHub Pages deployment workflow) Tj T* ET
+BT 1 0 0 1 5 7.4 Tm (.github/workflows/ci.yml) Tj T* ET
+BT 1 0 0 1 170.6 7.4 Tm (Unit test workflow) Tj T* ET
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.35 w
+n 0 145.6 m 468 145.6 l S
+n 0 0 m 468 0 l S
+n 0 0 m 0 145.6 l S
+n 468 0 m 468 145.6 l S
+n 0 124.8 m 468 124.8 l S
+n 0 104 m 468 104 l S
+n 0 83.2 m 468 83.2 l S
+n 0 62.4 m 468 62.4 l S
+n 0 41.6 m 468 41.6 l S
+n 0 20.8 m 468 20.8 l S
+n 165.6 0 m 165.6 145.6 l S
+Q
+Q
+Q
+q
+1 0 0 1 57.84 68.86 cm
+%PreformattedPara
+0 0 0 rg
+BT 1 0 0 1 36 71.2 Tm /F5 8 Tf 8.8 TL (for each iteration:) Tj T* (    for each ant:) Tj T* (        order = construct_job_order\(pheromone, heuristic\)) Tj T* (        schedule = decode\(order\)) Tj T* (        improved = local_search\(schedule\)) Tj T* (        update iteration_best and global_best) Tj T* (    evaporate pheromone) Tj T* (    deposit pheromone on iteration_best) Tj T* (    deposit elite pheromone on global_best) Tj T* ET
+Q
+ 
+endstream
+endobj
+18 0 obj
+<<
+/Length 4718
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7.5 Tf 9 TL ET
+.392157 .454902 .545098 rg
+BT 1 0 0 1 51.84 27.36 Tm (ACO-JSSP updated technical paper) Tj T* ET
+BT 1 0 0 1 536.3925 27.36 Tm (Page 4) Tj T* ET
+Q
+q
+1 0 0 1 57.84 716.16 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (5. Browser visualizer and user interface) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 670.56 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 30.1 Tm /F1 9.5 Tf 13.2 TL (The visualizer is a static HTML/JavaScript application deployed through GitHub Pages. It runs without a server and) Tj T* (without external visualization libraries. The user controls problem size and solver parameters directly in the sidebar.) Tj T* (The output is a machine-by-machine Gantt chart plus JSON for the resulting schedule.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 498.16 cm
+q
+.058824 .090196 .164706 rg
+n 0 166.4 468 -20.8 re f*
+1 1 1 rg
+BT /F2 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 153 Tm (Control) Tj T* ET
+BT 1 0 0 1 134.6 153 Tm (Meaning) Tj T* ET
+0 0 0 rg
+BT /F1 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 132.2 Tm (Jobs) Tj T* ET
+BT 1 0 0 1 134.6 132.2 Tm (Number of jobs in the generated instance) Tj T* ET
+BT 1 0 0 1 5 111.4 Tm (Machines) Tj T* ET
+BT 1 0 0 1 134.6 111.4 Tm (Number of machines visited by each job) Tj T* ET
+BT 1 0 0 1 5 90.6 Tm (Ants) Tj T* ET
+BT 1 0 0 1 134.6 90.6 Tm (Number of constructed solutions per iteration) Tj T* ET
+BT 1 0 0 1 5 69.8 Tm (Iterations) Tj T* ET
+BT 1 0 0 1 134.6 69.8 Tm (Number of ACO learning rounds) Tj T* ET
+BT 1 0 0 1 5 49 Tm (Local search) Tj T* ET
+BT 1 0 0 1 134.6 49 Tm (Pair-swap improvement budget) Tj T* ET
+BT 1 0 0 1 5 28.2 Tm (Seed) Tj T* ET
+BT 1 0 0 1 134.6 28.2 Tm (Reproducibility control) Tj T* ET
+BT 1 0 0 1 5 7.4 Tm (Min/Max duration) Tj T* ET
+BT 1 0 0 1 134.6 7.4 Tm (Range of operation processing times) Tj T* ET
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.35 w
+n 0 166.4 m 468 166.4 l S
+n 0 0 m 468 0 l S
+n 0 0 m 0 166.4 l S
+n 468 0 m 468 166.4 l S
+n 0 145.6 m 468 145.6 l S
+n 0 124.8 m 468 124.8 l S
+n 0 104 m 468 104 l S
+n 0 83.2 m 468 83.2 l S
+n 0 62.4 m 468 62.4 l S
+n 0 41.6 m 468 41.6 l S
+n 0 20.8 m 468 20.8 l S
+n 129.6 0 m 129.6 166.4 l S
+Q
+Q
+Q
+q
+1 0 0 1 57.84 465.76 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 16.9 Tm /F1 9.5 Tf 13.2 TL (The UI is intentionally simple: choose numbers, run the optimizer, inspect the schedule. The original/generated split) Tj T* (was removed because the instance-size controls already define the problem.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 447.26 cm
+q
+.490196 .827451 .988235 RG
+.5 w
+.878431 .94902 .996078 rg
+n -8 -8 512.32 28.5 re B*
+Q
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3.5 Tm /F2 9 Tf 12.5 TL (Live demo: https://addejans.github.io/ACO-JSSP/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 421.26 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (6. Algorithmic improvements) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 388.86 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 16.9 Tm /F1 9.5 Tf 13.2 TL (The updated algorithm improves both software reliability and search quality. It is still compact, but it is no longer a) Tj T* (direct mechanical port of the 2017 prototype.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 216.46 cm
+q
+.058824 .090196 .164706 rg
+n 0 166.4 468 -20.8 re f*
+1 1 1 rg
+BT /F2 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 153 Tm (Improvement) Tj T* ET
+BT 1 0 0 1 156.2 153 Tm (Why it matters) Tj T* ET
+0 0 0 rg
+BT /F1 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 132.2 Tm (Generated instances) Tj T* ET
+BT 1 0 0 1 156.2 132.2 Tm (Users can run more jobs and machines instead of one fixed problem) Tj T* ET
+BT 1 0 0 1 5 111.4 Tm (Remaining-work heuristic) Tj T* ET
+BT 1 0 0 1 156.2 111.4 Tm (Construction considers downstream work, not just the next duration) Tj T* ET
+BT 1 0 0 1 5 90.6 Tm (Exploration/exploitation mix) Tj T* ET
+BT 1 0 0 1 156.2 90.6 Tm (Balances random search with strong weighted moves) Tj T* ET
+BT 1 0 0 1 5 69.8 Tm (Pair-swap local search) Tj T* ET
+BT 1 0 0 1 156.2 69.8 Tm (Improves constructed job orders before pheromone reinforcement) Tj T* ET
+BT 1 0 0 1 5 49 Tm (Elite reinforcement) Tj T* ET
+BT 1 0 0 1 156.2 49 Tm (Preserves signal from the global best solution) Tj T* ET
+BT 1 0 0 1 5 28.2 Tm (Pheromone floor) Tj T* ET
+BT 1 0 0 1 156.2 28.2 Tm (Avoids transitions disappearing permanently) Tj T* ET
+BT 1 0 0 1 5 7.4 Tm (Seeded randomness) Tj T* ET
+BT 1 0 0 1 156.2 7.4 Tm (Makes examples reproducible for testing and explanation) Tj T* ET
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.35 w
+n 0 166.4 m 468 166.4 l S
+n 0 0 m 468 0 l S
+n 0 0 m 0 166.4 l S
+n 468 0 m 468 166.4 l S
+n 0 145.6 m 468 145.6 l S
+n 0 124.8 m 468 124.8 l S
+n 0 104 m 468 104 l S
+n 0 83.2 m 468 83.2 l S
+n 0 62.4 m 468 62.4 l S
+n 0 41.6 m 468 41.6 l S
+n 0 20.8 m 468 20.8 l S
+n 151.2 0 m 151.2 166.4 l S
+Q
+Q
+Q
+ 
+endstream
+endobj
+19 0 obj
+<<
+/Length 5636
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7.5 Tf 9 TL ET
+.392157 .454902 .545098 rg
+BT 1 0 0 1 51.84 27.36 Tm (ACO-JSSP updated technical paper) Tj T* ET
+BT 1 0 0 1 536.3925 27.36 Tm (Page 5) Tj T* ET
+Q
+q
+1 0 0 1 57.84 716.16 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (7. Testing and validation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 670.56 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 30.1 Tm /F1 9.5 Tf 13.2 TL (The tests focus on correctness properties that should always hold regardless of stochastic search quality. A candidate) Tj T* (schedule must satisfy job precedence, prevent machine overlap, return a complete set of operations, and behave) Tj T* (deterministically when the seed is fixed.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 652.06 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Machine non-overlap validation) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 633.56 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Job precedence validation) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 615.06 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Complete schedule length checks) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 596.56 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Deterministic output for fixed seeds) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 578.06 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Generated instance reproducibility) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 559.56 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Larger generated schedule smoke test) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 546.76 cm
+%PreformattedPara
+0 0 0 rg
+BT 1 0 0 1 36 .8 Tm /F5 8 Tf 8.8 TL (python -m unittest discover -s tests -v) Tj T* ET
+Q
+q
+1 0 0 1 57.84 514.36 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 16.9 Tm /F1 9.5 Tf 13.2 TL (These tests do not prove optimality. They prove that generated schedules are structurally valid and that the) Tj T* (implementation is stable enough for demonstration and further development.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 488.36 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (8. Limitations and extension roadmap) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 442.76 cm
+q
+.121569 .160784 .215686 rg
+BT 1 0 0 1 0 30.1 Tm /F1 9.5 Tf 13.2 TL (The project is a clear, educational implementation rather than a production-grade optimizer. It does not include) Tj T* (benchmark calibration, optimality bounds, disjunctive MILP comparisons, parallel ant construction, advanced) Tj T* (neighborhood search, or industrial data integrations. Those are natural next steps.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 270.36 cm
+q
+.058824 .090196 .164706 rg
+n 0 166.4 468 -20.8 re f*
+1 1 1 rg
+BT /F2 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 153 Tm (Extension) Tj T* ET
+BT 1 0 0 1 156.2 153 Tm (Expected benefit) Tj T* ET
+0 0 0 rg
+BT /F1 8.4 Tf 10.8 TL ET
+BT 1 0 0 1 5 132.2 Tm (Benchmark library support) Tj T* ET
+BT 1 0 0 1 156.2 132.2 Tm (Compare against standard JSSP instances) Tj T* ET
+BT 1 0 0 1 5 111.4 Tm (Critical path local search) Tj T* ET
+BT 1 0 0 1 156.2 111.4 Tm (Focus improvement on operations that drive makespan) Tj T* ET
+BT 1 0 0 1 5 90.6 Tm (Machine-level pheromones) Tj T* ET
+BT 1 0 0 1 156.2 90.6 Tm (Learn sequencing preferences specific to each machine) Tj T* ET
+BT 1 0 0 1 5 69.8 Tm (Dispatching-rule hybrids) Tj T* ET
+BT 1 0 0 1 156.2 69.8 Tm (Blend ACO with SPT, LPT, EDD, or slack-based rules) Tj T* ET
+BT 1 0 0 1 5 49 Tm (MILP baseline) Tj T* ET
+BT 1 0 0 1 156.2 49 Tm (Measure solution quality against exact or time-limited optimization) Tj T* ET
+BT 1 0 0 1 5 28.2 Tm (Parallel ants) Tj T* ET
+BT 1 0 0 1 156.2 28.2 Tm (Improve runtime on larger instances) Tj T* ET
+BT 1 0 0 1 5 7.4 Tm (Export CSV) Tj T* ET
+BT 1 0 0 1 156.2 7.4 Tm (Make UI output easier to reuse) Tj T* ET
+q
+1 J
+1 j
+.796078 .835294 .882353 RG
+.35 w
+n 0 166.4 m 468 166.4 l S
+n 0 0 m 468 0 l S
+n 0 0 m 0 166.4 l S
+n 468 0 m 468 166.4 l S
+n 0 145.6 m 468 145.6 l S
+n 0 124.8 m 468 124.8 l S
+n 0 104 m 468 104 l S
+n 0 83.2 m 468 83.2 l S
+n 0 62.4 m 468 62.4 l S
+n 0 41.6 m 468 41.6 l S
+n 0 20.8 m 468 20.8 l S
+n 151.2 0 m 151.2 166.4 l S
+Q
+Q
+Q
+q
+1 0 0 1 57.84 239.36 cm
+q
+.490196 .827451 .988235 RG
+.5 w
+.878431 .94902 .996078 rg
+n -8 -8 512.32 41 re B*
+Q
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 16 Tm /F2 9 Tf 12.5 TL -0.1226 Tw (The practical lesson is that metaheuristics become much more useful when paired with validation, visualization, and) Tj T* 0 Tw (a clean problem representation.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 213.36 cm
+q
+.058824 .090196 .164706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (Appendix. Historical code review notes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 57.84 194.86 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 The legacy scripts are retained for historical reference.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 176.36 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 The old implementation used Python 2 syntax and deprecated Plotly APIs.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 157.86 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 Hard-coded Plotly credentials were present in the historical file and should be considered compromised if still active.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 139.36 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 The new implementation avoids external plotting credentials and uses static browser rendering.) Tj T* 9 0 Td ET
+Q
+Q
+q
+1 0 0 1 57.84 120.86 cm
+q
+0 0 0 rg
+BT 1 0 0 1 14 3.2 Tm /F1 9.3 Tf 12.5 TL -9 0 Td (\177 New work should start from src/aco_jssp.py rather than the legacy files.) Tj T* 9 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000061 00000 n 
+0000000132 00000 n 
+0000000239 00000 n 
+0000000351 00000 n 
+0000000546 00000 n 
+0000000741 00000 n 
+0000000850 00000 n 
+0000000965 00000 n 
+0000001070 00000 n 
+0000001265 00000 n 
+0000001461 00000 n 
+0000001657 00000 n 
+0000001727 00000 n 
+0000002008 00000 n 
+0000002094 00000 n 
+0000004125 00000 n 
+0000008212 00000 n 
+0000018153 00000 n 
+0000022923 00000 n 
+trailer
+<<
+/ID 
+[<d6522afc4afee590fc5dbe79fb84b5df><d6522afc4afee590fc5dbe79fb84b5df>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 13 0 R
+/Root 12 0 R
+/Size 20
+>>
+startxref
+28611
+%%EOF
