@@ -1,0 +1,147 @@
+name: Generate Updated Paper Once
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-paper:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF dependency
+        run: python -m pip install reportlab
+      - name: Generate updated technical paper
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from reportlab.lib import colors
+          from reportlab.lib.enums import TA_CENTER
+          from reportlab.lib.pagesizes import letter
+          from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+          from reportlab.lib.units import inch
+          from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Preformatted, HRFlowable
+          from reportlab.graphics.shapes import Drawing, Rect, String, Line, Polygon
+
+          out = Path('papers/ACO_JSSP_Updated_Technical_Paper.pdf')
+          out.parent.mkdir(parents=True, exist_ok=True)
+
+          styles = getSampleStyleSheet()
+          styles.add(ParagraphStyle(name='TitleMain', parent=styles['Title'], fontName='Helvetica-Bold', fontSize=24, leading=28, alignment=TA_CENTER, textColor=colors.HexColor('#0F172A')))
+          styles.add(ParagraphStyle(name='Sub', parent=styles['Normal'], fontSize=11, leading=15, alignment=TA_CENTER, textColor=colors.HexColor('#475569'), spaceAfter=14))
+          styles.add(ParagraphStyle(name='H1x', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=15, leading=18, spaceBefore=8, spaceAfter=6, textColor=colors.HexColor('#0F172A')))
+          styles.add(ParagraphStyle(name='Bodyx', parent=styles['BodyText'], fontName='Helvetica', fontSize=9.5, leading=13.2, spaceAfter=6, textColor=colors.HexColor('#1F2937')))
+          styles.add(ParagraphStyle(name='Small', parent=styles['BodyText'], fontName='Helvetica', fontSize=8.1, leading=10.8, textColor=colors.HexColor('#475569')))
+          styles.add(ParagraphStyle(name='Bulletx', parent=styles['BodyText'], fontName='Helvetica', fontSize=9.3, leading=12.5, leftIndent=14, firstLineIndent=-9, spaceAfter=4))
+          styles.add(ParagraphStyle(name='Callout', parent=styles['BodyText'], fontName='Helvetica-Bold', fontSize=9, leading=12.5, textColor=colors.HexColor('#0F172A'), backColor=colors.HexColor('#E0F2FE'), borderPadding=8, borderColor=colors.HexColor('#7DD3FC'), borderWidth=0.5, spaceAfter=8))
+          styles.add(ParagraphStyle(name='Caption', parent=styles['BodyText'], fontName='Helvetica-Oblique', fontSize=8, leading=10, alignment=TA_CENTER, textColor=colors.HexColor('#64748B')))
+
+          def P(t, s='Bodyx'):
+              return Paragraph(t, styles[s])
+          def B(t):
+              return P('• ' + t, 'Bulletx')
+          def tbl(data, widths):
+              t = Table(data, colWidths=widths, hAlign='LEFT')
+              t.setStyle(TableStyle([
+                  ('FONTNAME',(0,0),(-1,-1),'Helvetica'),('FONTSIZE',(0,0),(-1,-1),8.4),('LEADING',(0,0),(-1,-1),10.8),('VALIGN',(0,0),(-1,-1),'TOP'),
+                  ('GRID',(0,0),(-1,-1),0.35,colors.HexColor('#CBD5E1')),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5),
+                  ('BACKGROUND',(0,0),(-1,0),colors.HexColor('#0F172A')),('TEXTCOLOR',(0,0),(-1,0),colors.white),('FONTNAME',(0,0),(-1,0),'Helvetica-Bold')
+              ]))
+              return t
+          def flow():
+              d=Drawing(480,130); fill=colors.HexColor('#E0F2FE'); stroke=colors.HexColor('#0284C7'); dark=colors.HexColor('#0F172A'); muted=colors.HexColor('#475569')
+              boxes=[(8,72,'Generate','instance'),(126,72,'Construct','ant orders'),(244,72,'Decode','schedule'),(362,72,'Evaluate','makespan'),(126,14,'Local','search'),(244,14,'Update','pheromone'),(362,14,'Render','Gantt UI')]
+              for x,y,a,b in boxes:
+                  d.add(Rect(x,y,100,40,rx=8,ry=8,fillColor=fill,strokeColor=stroke,strokeWidth=1.1)); d.add(String(x+50,y+23,a,textAnchor='middle',fontName='Helvetica-Bold',fontSize=9,fillColor=dark)); d.add(String(x+50,y+10,b,textAnchor='middle',fontName='Helvetica',fontSize=7.5,fillColor=muted))
+              def ar(x1,y1,x2,y2):
+                  d.add(Line(x1,y1,x2,y2,strokeColor=colors.HexColor('#64748B'),strokeWidth=1.1)); dx=5 if x2>=x1 else -5; d.add(Polygon([x2,y2,x2-dx,y2+3,x2-dx,y2-3],fillColor=colors.HexColor('#64748B'),strokeColor=colors.HexColor('#64748B')))
+              ar(108,92,126,92); ar(226,92,244,92); ar(344,92,362,92); ar(412,72,412,54); ar(362,34,344,34); ar(244,34,226,34); ar(176,54,176,72); ar(344,34,362,34)
+              return d
+
+          doc = SimpleDocTemplate(str(out), pagesize=letter, rightMargin=.72*inch, leftMargin=.72*inch, topMargin=.72*inch, bottomMargin=.68*inch, pageCompression=0)
+          story=[]
+          story += [Spacer(1,.45*inch), P('Ant Colony Optimization for Job Shop Scheduling','TitleMain'), P('Updated technical paper for the modern ACO-JSSP solver and browser visualizer','Sub'), P('<b>Adam DeJans Jr. | June 2026 | github.com/addejans/ACO-JSSP | addejans.github.io/ACO-JSSP/</b>','Sub'), HRFlowable(width='65%', thickness=1, color=colors.HexColor('#38BDF8'), spaceBefore=4, spaceAfter=18)]
+          story.append(P('<b>Abstract.</b> This paper documents a modernized Ant Colony Optimization implementation for the Job Shop Scheduling Problem. The repository started as a 2017 research prototype and now includes a Python 3 solver, deterministic tests, generated problem instances, a browser Gantt visualizer, and GitHub Pages deployment. The goal is not to prove global optimality. The goal is to provide a practical, inspectable demonstration of probabilistic construction, pheromone learning, exploitation, local search, and schedule decoding for a constrained sequencing problem.'))
+          story.append(P('<b>Keywords:</b> Ant Colony Optimization, job shop scheduling, metaheuristics, Gantt chart, operations research, local search, GitHub Pages.','Small'))
+          story.append(PageBreak())
+          story.append(P('1. Motivation and problem context','H1x'))
+          story.append(P('The Job Shop Scheduling Problem is a compact way to explain one of the hardest practical realities in operations: every job follows a route, every machine can process only one operation at a time, and every local sequencing choice can create downstream congestion. The objective in this repository is makespan minimization: finish the last operation as early as possible while respecting job-precedence and machine-capacity constraints.'))
+          story.append(P('Exact mathematical optimization formulations exist, but the search space grows quickly as jobs and machines increase. This makes JSSP a useful setting for metaheuristics. ACO converts scheduling into repeated constructive search: ants build sequences, good sequences receive more pheromone, and future ants are biased toward choices that historically produced shorter schedules.'))
+          story.append(P('Design goal: make the algorithm understandable, runnable, and visual before optimizing for industrial-scale performance.','Callout'))
+          story.append(P('2. Job shop scheduling model','H1x'))
+          story.append(P('A job shop instance is represented as a set of jobs. Each job is a sequence of operations. Each operation has a required machine and processing duration. A feasible schedule must satisfy job precedence and machine capacity.'))
+          story.append(tbl([['Concept','Representation','Purpose'],['Job','Index j in jobs','Route processed in order'],['Operation','(machine, duration)','One processing step'],['Job order','Sequence of job IDs','Constructive representation built by ants'],['Schedule','Start/end per operation','Decoded feasible solution'],['Objective','Makespan','Completion time of the last operation']], [1.35*inch,1.75*inch,3.35*inch]))
+          story.append(P('The modern solver uses a job-order encoding. Each time a job ID appears, the decoder schedules the next unscheduled operation for that job at the earliest feasible time. This guarantees job precedence by construction and lets the decoder enforce machine feasibility.'))
+          story.append(PageBreak())
+          story.append(P('3. Ant Colony Optimization technique','H1x'))
+          story.append(P('ACO is a population-based constructive metaheuristic. Each ant incrementally builds a complete solution. The choice of the next job is random but biased by pheromone and a heuristic estimate of desirability.'))
+          story.append(flow()); story.append(P('Figure 1. Updated ACO-JSSP flow from generated instance to schedule visualization.','Caption'))
+          for item in ['Generate or load a JSSP instance.','Initialize pheromone values for transitions between job selections.','Let each ant construct a full job-order sequence.','Decode the job order into a feasible active schedule.','Improve the constructed solution with pair-swap local search.','Evaporate old pheromone and reinforce the iteration-best and global-best orders.','Return the best schedule found and render it as a Gantt chart.']:
+              story.append(B(item))
+          story.append(P('This is not a proof of optimality. It is a demonstration of improving stochastic search over a constrained scheduling space.','Callout'))
+          story.append(P('4. Modern implementation','H1x'))
+          story.append(P('The updated Python solver is dependency-free and uses standard-library data structures. The original repository scripts used Python 2 syntax and an old Plotly API. The modern implementation adds a clean object model, deterministic random seeds, JSON output, tests, and CLI controls.'))
+          story.append(tbl([['File','Role'],['src/aco_jssp.py','Modern Python 3 ACO solver and CLI'],['tests/test_aco_jssp.py','Schedule validity and determinism tests'],['docs/index.html','Browser visualizer and Gantt chart UI'],['ERRORS_AND_FIXES.md','Review notes and corrected issues'],['.github/workflows/pages.yml','GitHub Pages deployment workflow'],['.github/workflows/ci.yml','Unit test workflow']], [2.3*inch,4.2*inch]))
+          story.append(Preformatted('''for each iteration:\n    for each ant:\n        order = construct_job_order(pheromone, heuristic)\n        schedule = decode(order)\n        improved = local_search(schedule)\n        update iteration_best and global_best\n    evaporate pheromone\n    deposit pheromone on iteration_best\n    deposit elite pheromone on global_best''', styles['Code']))
+          story.append(PageBreak())
+          story.append(P('5. Browser visualizer and user interface','H1x'))
+          story.append(P('The visualizer is a static HTML/JavaScript application deployed through GitHub Pages. It runs without a server and without external visualization libraries. The user controls problem size and solver parameters directly in the sidebar. The output is a machine-by-machine Gantt chart plus JSON for the resulting schedule.'))
+          story.append(tbl([['Control','Meaning'],['Jobs','Number of jobs in the generated instance'],['Machines','Number of machines visited by each job'],['Ants','Number of constructed solutions per iteration'],['Iterations','Number of ACO learning rounds'],['Local search','Pair-swap improvement budget'],['Seed','Reproducibility control'],['Min/Max duration','Range of operation processing times']], [1.8*inch,4.7*inch]))
+          story.append(P('The UI is intentionally simple: choose numbers, run the optimizer, inspect the schedule. The original/generated split was removed because the instance-size controls already define the problem.'))
+          story.append(P('Live demo: https://addejans.github.io/ACO-JSSP/','Callout'))
+          story.append(P('6. Algorithmic improvements','H1x'))
+          story.append(P('The updated algorithm improves both software reliability and search quality. It is still compact, but it is no longer a direct mechanical port of the 2017 prototype.'))
+          story.append(tbl([['Improvement','Why it matters'],['Generated instances','Users can run more jobs and machines instead of one fixed problem'],['Remaining-work heuristic','Construction considers downstream work, not just the next duration'],['Exploration/exploitation mix','Balances random search with strong weighted moves'],['Pair-swap local search','Improves constructed job orders before pheromone reinforcement'],['Elite reinforcement','Preserves signal from the global best solution'],['Pheromone floor','Avoids transitions disappearing permanently'],['Seeded randomness','Makes examples reproducible for testing and explanation']], [2.1*inch,4.4*inch]))
+          story.append(PageBreak())
+          story.append(P('7. Testing and validation','H1x'))
+          story.append(P('The tests focus on correctness properties that should always hold regardless of stochastic search quality. A candidate schedule must satisfy job precedence, prevent machine overlap, return a complete set of operations, and behave deterministically when the seed is fixed.'))
+          for item in ['Machine non-overlap validation','Job precedence validation','Complete schedule length checks','Deterministic output for fixed seeds','Generated instance reproducibility','Larger generated schedule smoke test']:
+              story.append(B(item))
+          story.append(Preformatted('python -m unittest discover -s tests -v', styles['Code']))
+          story.append(P('These tests do not prove optimality. They prove that generated schedules are structurally valid and that the implementation is stable enough for demonstration and further development.'))
+          story.append(P('8. Limitations and extension roadmap','H1x'))
+          story.append(P('The project is a clear, educational implementation rather than a production-grade optimizer. It does not include benchmark calibration, optimality bounds, disjunctive MILP comparisons, parallel ant construction, advanced neighborhood search, or industrial data integrations. Those are natural next steps.'))
+          story.append(tbl([['Extension','Expected benefit'],['Benchmark library support','Compare against standard JSSP instances'],['Critical path local search','Focus improvement on operations that drive makespan'],['Machine-level pheromones','Learn sequencing preferences specific to each machine'],['Dispatching-rule hybrids','Blend ACO with SPT, LPT, EDD, or slack-based rules'],['MILP baseline','Measure solution quality against exact or time-limited optimization'],['Parallel ants','Improve runtime on larger instances'],['Export CSV','Make UI output easier to reuse']], [2.1*inch,4.4*inch]))
+          story.append(P('The practical lesson is that metaheuristics become much more useful when paired with validation, visualization, and a clean problem representation.','Callout'))
+          story.append(P('Appendix. Historical code review notes','H1x'))
+          for item in ['The legacy scripts are retained for historical reference.','The old implementation used Python 2 syntax and deprecated Plotly APIs.','Hard-coded Plotly credentials were present in the historical file and should be considered compromised if still active.','The new implementation avoids external plotting credentials and uses static browser rendering.','New work should start from src/aco_jssp.py rather than the legacy files.']:
+              story.append(B(item))
+
+          def footer(canvas, doc):
+              canvas.saveState(); canvas.setFont('Helvetica',7.5); canvas.setFillColor(colors.HexColor('#64748B')); canvas.drawString(.72*inch,.38*inch,'ACO-JSSP updated technical paper'); canvas.drawRightString(letter[0]-.72*inch,.38*inch,f'Page {doc.page}'); canvas.restoreState()
+          doc.build(story, onFirstPage=footer, onLaterPages=footer)
+          PY
+      - name: Update README link
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('README.md')
+          text = p.read_text(encoding='utf-8')
+          link = 'Updated technical paper: [ACO_JSSP_Updated_Technical_Paper.pdf](papers/ACO_JSSP_Updated_Technical_Paper.pdf)'
+          if link not in text:
+              marker = 'The demo runs entirely in the browser and lets you choose the number of jobs and machines, tune ACO parameters, and inspect the resulting Gantt chart.\n'
+              text = text.replace(marker, marker + '\n' + link + '\n', 1)
+              p.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove one-time workflow
+        run: |
+          rm -f .github/workflows/generate-updated-paper-once.yml .github/generate-paper-trigger
+      - name: Commit updated paper
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Add updated ACO-JSSP technical paper"
+          git push
