@@ -4,6 +4,14 @@ Job Shop Scheduling Problem via Ant Colony Optimization.
 
 This repository began as a 2017 research/prototype implementation of Ant Colony Optimization (ACO) for a small Job Shop Scheduling Problem (JSSP). It now includes a cleaned Python 3 solver, tests, and a dependency-free browser visualizer that can run both the original demo and generated instances.
 
+## Live demo
+
+Try the browser visualizer here:
+
+https://addejans.github.io/ACO-JSSP/
+
+The demo runs entirely in the browser and lets you generate job-shop instances, tune ACO parameters, and inspect the resulting Gantt chart.
+
 ## What this solves
 
 In a job shop scheduling problem, each job has a fixed sequence of operations. Each operation must run on a specific machine for a given duration. The goal is to sequence operations on machines while respecting job precedence and machine capacity, usually minimizing the final completion time, or **makespan**.
@@ -23,7 +31,7 @@ The cleaned implementation is dependency-free and uses only the Python standard 
 
 ## Scalable generated instances
 
-The solver can now generate reproducible random JSSP instances. Each job visits each machine exactly once in a random route order.
+The solver can generate reproducible random JSSP instances. Each job visits each machine exactly once in a random route order.
 
 Important CLI options:
 
@@ -46,13 +54,13 @@ The visualizer lives in [`docs/index.html`](docs/index.html). It runs entirely i
 - the original 4-job, 3-machine demo instance, or
 - a generated instance with a user-selected number of jobs and machines.
 
-After this PR is merged, GitHub Pages can be deployed from the included workflow:
+The GitHub Pages workflow publishes the `docs/` directory:
 
 ```text
 .github/workflows/pages.yml
 ```
 
-The Pages workflow publishes the `docs/` directory.
+For the live site, GitHub Pages should be configured to deploy from GitHub Actions.
 
 ## Algorithm improvements
 
